@@ -1,0 +1,11 @@
+1. assessor público
+2. Menu
+3. Atendimento
+3.1. Controle de Agravos
+ - Situação - sempre o valor 'todos'
+ - Agravo CID A90 e A91
+ - 'Procurar'
+ - 'Exportar'
+
+4. Irá gerar dois arquivos excel
+5. Concatenar 
