@@ -156,8 +156,8 @@ def _agravos_dengue_xi():
     hoje = date.today().strftime("%d-%m-%Y")
     datas_final.append(hoje)
     
-    user = 'user'
-    password = 'password'
+    user = os.environ.get('login_sinan')
+    password = os.environ.get('pass_sinan')
 
     diretorio_atual = os.getcwd()
     caminho_pasta_download = os.path.join(diretorio_atual, "exportacoes")
