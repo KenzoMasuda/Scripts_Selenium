@@ -2,7 +2,7 @@
 """
 Created on Wed Feb  1 14:16:57 2023
 
-@author: info
+@author: KENZO
 """
 
 def _agravos_dengue_xi():
@@ -64,8 +64,6 @@ def _agravos_dengue_xi():
                 
     def corrige_arquivo(path):
         list_agravos_dbf = glob(path + "\*.dbf")
-        #list_agravos_dbf = glob(r"\\172.17.17.124\d\Desktop\agravos_dengue_xi\exportacoes\*.dbf")
-        #list_agravos_dbf = list_agravos_dbf_sup[1], list_agravos_dbf_sup[3]
         list_agravos_basename = []
         df = []
         
@@ -85,7 +83,6 @@ def _agravos_dengue_xi():
                 index = df[i].columns.get_loc("NU_NOTIFIC")
                 df_sup = df[i].iloc[:, :index] #pega o pedaço do dataframe fora de posição
                 df[i] = df[i].drop(df_sup, axis = 1) #apaga aquele pedaço
-                #print(df)
                 df[i] = pd.concat([df[i], df_sup], axis=1) #concatena o pedaço no final novamente
                 df[i].to_excel(path + "\\" + agravo + ".xlsx", index = False)
     
@@ -112,7 +109,6 @@ def _agravos_dengue_xi():
     def extrair_zip(path):
         os.startfile(path)
         list_path_exportacoes = []
-        #path = r"\\172.17.17.124\d\Desktop\teste\exportacoes"
         list_path_exportacoes = glob(os.path.join(path, '*.zip'))
         
         for i in list_path_exportacoes:
@@ -163,7 +159,6 @@ def _agravos_dengue_xi():
     caminho_pasta_download = os.path.join(diretorio_atual, "exportacoes")
     if not os.path.isdir(caminho_pasta_download):
         os.mkdir(caminho_pasta_download)
-    #report_download_path = r"\\172.17.17.124\d\Desktop\agravos_dengue_xi\exportacoes"
     report_download_path = caminho_pasta_download
     
     
